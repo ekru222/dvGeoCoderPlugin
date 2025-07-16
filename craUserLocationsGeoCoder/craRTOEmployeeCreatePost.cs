@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,8 @@ namespace craUserLocationsGeoCoder
         {
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
-            IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);  // Means user will perform all CRUD actions using the permissions of the user who triggered the event
+            IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
             ITracingService tracing = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
-
 
             Entity NewEmployee = (Entity)context.InputParameters["Target"];
 
@@ -24,9 +24,9 @@ namespace craUserLocationsGeoCoder
             var personLat = NewEmployee.GetAttributeValue<double>("cra33_Latitude");
             var personLon = NewEmployee.GetAttributeValue<double>("cra33_Longitude");
             var personId = NewEmployee.Id;
-            Console.WriteLine("Person ID =" & personId)
+            tracing.Trace($"Person ID = {personId}");
+            Console.WriteLine($"Person ID = {personId}");
 
-            // Query all locations
             var locationQuery = new QueryExpression("cr736_doioccupancybuildingslist")
             {
                 ColumnSet = new ColumnSet("cr736_doioccupancybuildingslistid", "cr736_latitude", "cr736_longitude")
@@ -34,7 +34,6 @@ namespace craUserLocationsGeoCoder
 
             var allLocations = service.RetrieveMultiple(locationQuery);
 
-            // Process each location and create junction records for matches
             foreach (Entity location in allLocations.Entities)
             {
                 var locationLat = location.GetAttributeValue<double>("cr736_latitude");
@@ -44,7 +43,6 @@ namespace craUserLocationsGeoCoder
                     personLat, personLon,
                     locationLat, locationLon);
 
-                // Only create junction if within 50 miles
                 if (distance <= 50)
                 {
                     var junction = new Entity("cra33_peoplebuildingjunction");
@@ -57,29 +55,31 @@ namespace craUserLocationsGeoCoder
             }
         }
     }
-        
-    public static class DistanceCalculator
+
+public static class DistanceCalculator
     {
         public static double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
-                const double earthRadius = 3959; // miles (use 6371 for kilometers)
-        
-                var dLat = ToRadians(lat2 - lat1);
-                var dLon = ToRadians(lon2 - lon1);
-                
-                var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
-                        Math.Cos(ToRadians(lat1)) * Math.Cos(ToRadians(lat2)) *
-                        Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
-                
-                var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-                
-                return earthRadius * c;  // ... distance calculation code
+            const double earthRadius = 3959;
+
+            var dLat = ToRadians(lat2 - lat1);
+            var dLon = ToRadians(lon2 - lon1);
+
+            var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                    Math.Cos(ToRadians(lat1)) * Math.Cos(ToRadians(lat2)) *
+                    Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+            return earthRadius * c;
         }
-        
+
         private static double ToRadians(double degrees)
         {
             return degrees * Math.PI / 180;
         }
     }
-    }
-}
+
+}       
+// just addding a comment to ensure I'm in the lastest git version.
+
