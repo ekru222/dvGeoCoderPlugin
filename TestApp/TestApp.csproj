@@ -6,9 +6,11 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.2.9" />
     <PackageReference Include="Moq" Version="4.20.72" />

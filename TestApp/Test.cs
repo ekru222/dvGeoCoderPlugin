@@ -1,14 +1,33 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.IO;
-using Papa = Papaparse;
+using CsvHelper;
+using System.Globalization;
+using System.Linq;
+using craUserLocationsGeoCoder;
 
-[TestClass]
+
+
+    // Example method to parse CSV using CsvHelper
+
+
+    [TestClass]
 public class craUserLocationTest
 {
     [TestMethod]
+
+    public static IEnumerable<dynamic> ParseCsv(string csvPath)
+    {
+        using (var reader = new StreamReader(csvPath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            return records;
+        }
+    }
     public void craUserLocationTestPluginLogic()
     {
         // Arrange
@@ -44,27 +63,31 @@ public class craUserLocationTest
         { 
             { "Target", targetEntity } 
         });
-        
+
         // Read CSV and convert to EntityCollection
         var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "buildings.csv");
-        var csvContent = File.ReadAllText(csvPath);
-        var csv = Papa.Parse(csvContent, new Papa.ParseConfig { 
-            Header = true, 
-            DynamicTyping = true,
-            SkipEmptyLines = true
-        });
-        
+        var csvData = ParseCsv(csvPath);
         var fakeBuildings = new EntityCollection();
-        foreach (var row in csv.Data)
+
+        foreach (dynamic row in csvData)
         {
             var building = new Entity("cr736_doioccupancybuildingslist", Guid.NewGuid());
-            building["cr736_latitude"] = Convert.ToDouble(row["latitude"]);
-            building["cr736_longitude"] = Convert.ToDouble(row["longitude"]);
-            if (row.ContainsKey("name"))
-                building["cr736_name"] = row["name"]?.ToString();
+
+            // Convert dynamic to dictionary for easier property checking
+            var rowDict = (IDictionary<string, object>)row;
+
+            if (rowDict.ContainsKey("latitude"))
+                building["cr736_latitude"] = Convert.ToDouble(rowDict["latitude"]);
+
+            if (rowDict.ContainsKey("longitude"))
+                building["cr736_longitude"] = Convert.ToDouble(rowDict["longitude"]);
+
+            if (rowDict.ContainsKey("name") && rowDict["name"] != null)
+                building["cr736_name"] = rowDict["name"].ToString();
+
             fakeBuildings.Entities.Add(building);
         }
-        
+
         // Mock the service to return CSV data
         service.Setup(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()))
                .Returns(fakeBuildings);
@@ -119,27 +142,32 @@ public class craUserLocationTest
         
         serviceFactory.Setup(f => f.CreateOrganizationService(testUserId))
                      .Returns(service.Object);
-        
+
+        // Read CSV and convert to EntityCollection
         // Read CSV and convert to EntityCollection
         var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "buildings.csv");
-        var csvContent = File.ReadAllText(csvPath);
-        var csv = Papa.Parse(csvContent, new Papa.ParseConfig { 
-            Header = true, 
-            DynamicTyping = true,
-            SkipEmptyLines = true
-        });
-        
+        var csvData = ParseCsv(csvPath);
         var fakeBuildings = new EntityCollection();
-        foreach (var row in csv.Data)
+
+        foreach (dynamic row in csvData)
         {
             var building = new Entity("cr736_doioccupancybuildingslist", Guid.NewGuid());
-            building["cr736_latitude"] = Convert.ToDouble(row["latitude"]);
-            building["cr736_longitude"] = Convert.ToDouble(row["longitude"]);
-            if (row.ContainsKey("name"))
-                building["cr736_name"] = row["name"]?.ToString();
+
+            // Convert dynamic to dictionary for easier property checking
+            var rowDict = (IDictionary<string, object>)row;
+
+            if (rowDict.ContainsKey("latitude"))
+                building["cr736_latitude"] = Convert.ToDouble(rowDict["latitude"]);
+
+            if (rowDict.ContainsKey("longitude"))
+                building["cr736_longitude"] = Convert.ToDouble(rowDict["longitude"]);
+
+            if (rowDict.ContainsKey("name") && rowDict["name"] != null)
+                building["cr736_name"] = rowDict["name"].ToString();
+
             fakeBuildings.Entities.Add(building);
         }
-        
+
         service.Setup(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()))
                .Returns(fakeBuildings);
         

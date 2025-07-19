@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craUserLocationsGeoCoder", "craUserLocationsGeoCoder\craUserLocationsGeoCoder.csproj", "{8DF8275D-851A-4705-A339-F14894C862DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8DF8275D-851A-4705-A339-F14894C862DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF8275D-851A-4705-A339-F14894C862DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DF8275D-851A-4705-A339-F14894C862DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
