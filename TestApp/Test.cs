@@ -8,18 +8,20 @@ using CsvHelper;
 using System.Globalization;
 using System.Linq;
 using craUserLocationsGeoCoder;
+using System.Collections.Generic; // Add this for IEnumerable<dynamic>
+using System.Reflection;
 
 
 
-    // Example method to parse CSV using CsvHelper
+// Example method to parse CSV using CsvHelper
 
 
-    [TestClass]
+[TestClass]
 public class craUserLocationTest
 {
-    [TestMethod]
+  
 
-    public static IEnumerable<dynamic> ParseCsv(string csvPath)
+    private IEnumerable<dynamic> ParseCsv(string csvPath)
     {
         using (var reader = new StreamReader(csvPath))
         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -28,6 +30,8 @@ public class craUserLocationTest
             return records;
         }
     }
+
+    [TestMethod]
     public void craUserLocationTestPluginLogic()
     {
         // Arrange
@@ -65,7 +69,8 @@ public class craUserLocationTest
         });
 
         // Read CSV and convert to EntityCollection
-        var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "buildings.csv");
+        // testing new var csvPath below var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "buildings.csv"); 
+        var csvPath = "buildings.csv"; // Just the filename
         var csvData = ParseCsv(csvPath);
         var fakeBuildings = new EntityCollection();
 

@@ -1,39 +1,55 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\TestApp\\TestApp.csproj": {}
+    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
+    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
+        "projectUniqueName": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
         "projectName": "craUserLocationsGeoCoder",
-        "projectPath": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
+        "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
+        "packagesPath": "C:\\Users\\erutledge\\.nuget\\packages\\",
+        "projectStyle": "PackagesConfig",
         "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "C:\\Users\\erutledge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net472": {
             "projectReferences": {}
           }
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low"
+        },
+        "packagesConfigPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\packages.config"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\TestApp\\TestApp.csproj": {
+    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\TestApp\\TestApp.csproj",
+        "projectUniqueName": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj",
         "projectName": "TestApp",
-        "projectPath": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\TestApp\\TestApp.csproj",
-        "packagesPath": "C:\\Users\\12709\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\TestApp\\obj\\",
+        "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj",
+        "packagesPath": "C:\\Users\\erutledge\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\12709\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\erutledge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,8 +64,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
-                "projectPath": "C:\\Users\\12709\\source\\repos\\craUserLocationsGeoCoderPlugins\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj"
+              "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
+                "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj"
               }
             }
           }
@@ -95,12 +111,7 @@
               "version": "[4.20.72, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x86": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
