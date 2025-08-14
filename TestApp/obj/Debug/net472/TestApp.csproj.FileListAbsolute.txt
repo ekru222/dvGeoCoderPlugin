@@ -1,4 +1,3 @@
-C:\Users\erutledge\dvGeoCoderPlugin\TestApp\bin\Debug\net472\.msCoverageSourceRootsMapping_TestApp
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.csproj.AssemblyReference.cache
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.csproj.SuggestedBindingRedirects.cache
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.GeneratedMSBuildEditorConfig.editorconfig
@@ -179,3 +178,4 @@ C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.dll.config
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.csproj.Up2Date
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.dll
 C:\Users\erutledge\dvGeoCoderPlugin\TestApp\obj\Debug\net472\TestApp.pdb
+C:\Users\erutledge\dvGeoCoderPlugin\TestApp\bin\Debug\net472\buildings.csv

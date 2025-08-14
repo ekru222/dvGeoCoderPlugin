@@ -9,28 +9,12 @@
         "projectUniqueName": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
         "projectName": "craUserLocationsGeoCoder",
         "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
-        "packagesPath": "C:\\Users\\erutledge\\.nuget\\packages\\",
-        "projectStyle": "PackagesConfig",
         "UsingMicrosoftNETSdk": false,
-        "configFilePaths": [
-          "C:\\Users\\erutledge\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net472": {
             "projectReferences": {}
           }
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low"
-        },
-        "packagesConfigPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\packages.config"
+        }
       },
       "frameworks": {
         "net472": {}
