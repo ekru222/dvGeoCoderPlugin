@@ -20,7 +20,7 @@ using System.Reflection;
 public class craUserLocationTest
 {
   
-
+    
     private IEnumerable<dynamic> ParseCsv(string csvPath)
     {
         using (var reader = new StreamReader(csvPath))
@@ -137,8 +137,8 @@ public class craUserLocationTest
         context.Setup(c => c.UserId).Returns(testUserId);
         
         var targetEntity = new Entity("cra33_employee", Guid.NewGuid());
-        targetEntity["cra33_Latitude"] = 41.8781;  // Example: Chicago latitude
-        targetEntity["cra33_Longitude"] = -87.6298; // Example: Chicago longitude
+        targetEntity["cra33_Latitude"] = 39.7941;  // Example: Springfield, ILL latitude
+        targetEntity["cra33_Longitude"] = -89.6395; // Example: Springfield longitude
         
         context.Setup(c => c.InputParameters).Returns(new ParameterCollection 
         { 
@@ -161,21 +161,49 @@ public class craUserLocationTest
             // Convert dynamic to dictionary for easier property checking
             var rowDict = (IDictionary<string, object>)row;
 
-            if (rowDict.ContainsKey("latitude"))
-                building["cr736_latitude"] = Convert.ToDouble(rowDict["latitude"]);
+            if (rowDict.ContainsKey("Latitude") && rowDict["Latitude"] != null)
+            {
+                var latString = rowDict["Latitude"].ToString().Trim();
+                if (double.TryParse(latString, out double latitude))
+                {
+                    building["cr736_latitude"] = latitude;
+                }
+                else
+                {
+                    Console.WriteLine($"Could not parse latitude: '{latString}'");
+                }
+            }
 
-            if (rowDict.ContainsKey("longitude"))
-                building["cr736_longitude"] = Convert.ToDouble(rowDict["longitude"]);
+            if (rowDict.ContainsKey("Longitude") && rowDict["Longitude"] != null)
+            {
+                var lngString = rowDict["Longitude"].ToString().Trim();
+                if (double.TryParse(lngString, out double longitude))
+                {
+                    building["cr736_longitude"] = longitude;
+                }
+                else
+                {
+                    Console.WriteLine($"Could not parse longitude: '{lngString}'");
+                }
+            }
 
-            if (rowDict.ContainsKey("name") && rowDict["name"] != null)
-                building["cr736_name"] = rowDict["name"].ToString();
+            if (rowDict.ContainsKey("Building Name") && rowDict["Building Name"] != null)
+                building["cr736_name"] = rowDict["Building Name"].ToString();
 
             fakeBuildings.Entities.Add(building);
         }
 
         service.Setup(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()))
                .Returns(fakeBuildings);
-        
+
+        // Debug: Show first few buildings
+        foreach (var building in fakeBuildings.Entities.Take(3))
+        {
+            Console.WriteLine($"Building: {building.GetAttributeValue<string>("cr736_name")} - " +
+                             $"Lat: {building.GetAttributeValue<double>("cr736_latitude")}, " +
+                             $"Lng: {building.GetAttributeValue<double>("cr736_longitude")}");
+        }
+
         // Act
         var plugin = new craRTOEmployeeCreatePost();
         plugin.Execute(serviceProvider.Object);
