@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ulPPxEPpeU8=",
+  "dgSpecHash": "OnCD7SolK+0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj",
+  "projectFilePath": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erutledge\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\erutledge\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",

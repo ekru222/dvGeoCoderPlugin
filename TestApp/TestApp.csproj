@@ -4,9 +4,10 @@
     <TargetFramework>net472</TargetFramework>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
 	<IsTestProject>true</IsTestProject>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<LangVersion>latest</LangVersion>
+	<PlatformTarget>AnyCPU</PlatformTarget>
+  <!-- <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>    -->
+  <LangVersion>latest</LangVersion>
 	 <IsPackable>false</IsPackable>
   </PropertyGroup>
 

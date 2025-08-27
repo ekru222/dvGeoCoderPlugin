@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj": {}
+    "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
+    "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
+        "projectUniqueName": "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
         "projectName": "craUserLocationsGeoCoder",
-        "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
+        "projectPath": "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
@@ -20,14 +20,14 @@
         "net472": {}
       }
     },
-    "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj": {
+    "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj",
+        "projectUniqueName": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
         "projectName": "TestApp",
-        "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\TestApp.csproj",
+        "projectPath": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
         "packagesPath": "C:\\Users\\erutledge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\obj\\",
+        "outputPath": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,8 +48,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
-                "projectPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj"
+              "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj": {
+                "projectPath": "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj"
               }
             }
           }
