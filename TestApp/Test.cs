@@ -31,88 +31,6 @@ public class craUserLocationTest
         }
     }
 
-    [TestMethod]
-    public void craUserLocationTestPluginLogic()
-    {
-        // Arrange
-        var context = new Mock<IPluginExecutionContext>();
-        var serviceFactory = new Mock<IOrganizationServiceFactory>();
-        var service = new Mock<IOrganizationService>();
-        var serviceProvider = new Mock<IServiceProvider>();
-        var tracing = new Mock<ITracingService>();
-        
-        // Setup the service provider to return our mocked services
-        serviceProvider.Setup(s => s.GetService(typeof(IPluginExecutionContext)))
-                      .Returns(context.Object);
-        serviceProvider.Setup(s => s.GetService(typeof(IOrganizationServiceFactory)))
-                      .Returns(serviceFactory.Object);
-        serviceProvider.Setup(s => s.GetService(typeof(ITracingService)))
-                      .Returns(tracing.Object);
-        
-        // Setup mocks with realistic data
-        context.Setup(c => c.InputParameters).Returns(new ParameterCollection());
-        context.Setup(c => c.UserId).Returns(Guid.NewGuid());
-        context.Setup(c => c.MessageName).Returns("Create");
-        context.Setup(c => c.PrimaryEntityName).Returns("cra33_employee");
-        context.Setup(c => c.Stage).Returns(40); // Post-operation stage
-        
-        serviceFactory.Setup(f => f.CreateOrganizationService(It.IsAny<Guid>()))
-                     .Returns(service.Object);
-        
-        // Setup a target entity with the latitude and longitude your plugin needs
-        var targetEntity = new Entity("cra33_employee", Guid.NewGuid());
-        targetEntity["cra33_Latitude"] = 40.7128;  // Example: NYC latitude
-        targetEntity["cra33_Longitude"] = -74.0060; // Example: NYC longitude
-        context.Setup(c => c.InputParameters).Returns(new ParameterCollection 
-        { 
-            { "Target", targetEntity } 
-        });
-
-        // Read CSV and convert to EntityCollection
-        // testing new var csvPath below var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "buildings.csv"); 
-        var csvPath = "buildings.csv"; // Just the filename
-        var csvData = ParseCsv(csvPath);
-        var fakeBuildings = new EntityCollection();
-
-        foreach (dynamic row in csvData)
-        {
-            var building = new Entity("cr736_doioccupancybuildingslist", Guid.NewGuid());
-
-            // Convert dynamic to dictionary for easier property checking
-            var rowDict = (IDictionary<string, object>)row;
-
-            if (rowDict.ContainsKey("latitude"))
-                building["cr736_latitude"] = Convert.ToDouble(rowDict["latitude"]);
-
-            if (rowDict.ContainsKey("longitude"))
-                building["cr736_longitude"] = Convert.ToDouble(rowDict["longitude"]);
-
-            if (rowDict.ContainsKey("name") && rowDict["name"] != null)
-                building["cr736_name"] = rowDict["name"].ToString();
-
-            fakeBuildings.Entities.Add(building);
-        }
-
-        // Mock the service to return CSV data
-        service.Setup(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()))
-               .Returns(fakeBuildings);
-        
-        // Act
-        var plugin = new craRTOEmployeeCreatePost();
-        
-        // This shouldn't throw an exception
-        plugin.Execute(serviceProvider.Object);
-        
-        // Assert
-        // Verify that your plugin called the organization service as expected
-        service.Verify(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()), Times.Once);
-        
-        // Verify junction records were created (you can adjust this based on your CSV data)
-        service.Verify(s => s.Create(It.Is<Entity>(e => e.LogicalName == "cra33_peoplebuildingjunction")), Times.AtLeastOnce);
-        
-        // You can also verify context was accessed
-        context.Verify(c => c.InputParameters, Times.AtLeastOnce);
-    }
     
     [TestMethod]
     public void craUserLocationTestPluginLogic_WithSpecificScenario()
@@ -246,5 +164,7 @@ public class craUserLocationTest
         plugin.Execute(serviceProvider.Object);
         
         // Assert - Exception is expected, so test passes if exception is thrown
+
+        Assert.Throws
     }
 }

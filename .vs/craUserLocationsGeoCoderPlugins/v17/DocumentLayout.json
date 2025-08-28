@@ -27,7 +27,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TestApp",
+              "Title": "TestApp.csproj",
               "DocumentMoniker": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
               "RelativeDocumentMoniker": "TestApp\\TestApp.csproj",
               "ToolTip": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
               "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
               "RelativeToolTip": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAwFUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T22:35:12.113Z",
               "EditorCaption": ""
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "TestApp\\Test.cs",
               "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\Test.cs",
               "RelativeToolTip": "TestApp\\Test.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAWwKIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAowIwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T22:20:15.782Z",
               "EditorCaption": ""
