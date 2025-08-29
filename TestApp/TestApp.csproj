@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
 	<IsTestProject>true</IsTestProject>
 	<PlatformTarget>AnyCPU</PlatformTarget>
   <!-- <ImplicitUsings>enable</ImplicitUsings>

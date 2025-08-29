@@ -15,7 +15,9 @@ using System.Reflection;
 
 // Example method to parse CSV using CsvHelper
 
+namespace testNameSpace
 
+{ 
 [TestClass]
 public class craUserLocationTest
 {
@@ -173,3 +175,4 @@ public class craUserLocationTest
         }
     }
 
+}

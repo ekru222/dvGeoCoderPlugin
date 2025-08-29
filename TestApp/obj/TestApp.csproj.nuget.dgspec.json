@@ -11,13 +11,13 @@
         "projectPath": "C:\\Users\\erutledge\\dvgeocoderplugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
-          "net472": {
+          "net471": {
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
-        "net472": {}
+        "net471": {}
       }
     },
     "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj": {
