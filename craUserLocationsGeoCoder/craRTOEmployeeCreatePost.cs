@@ -19,7 +19,10 @@ namespace craUserLocationsGeoCoder
 
             Entity NewEmployee = (Entity)context.InputParameters["Target"];
 
-            if (!NewEmployee.Contains("cra33_Latitude") || !NewEmployee.Contains("cra33_Longitude")) return;
+            if (!NewEmployee.Contains("cra33_Latitude") || !NewEmployee.Contains("cra33_Longitude"))   //if lat or long are missing
+            {
+                throw new InvalidPluginExecutionException("Employee record must contain both Latitude and Longitude values."); //throw this error
+            }
 
             var personLat = NewEmployee.GetAttributeValue<double>("cra33_Latitude");
             var personLon = NewEmployee.GetAttributeValue<double>("cra33_Longitude");

@@ -134,7 +134,7 @@ public class craUserLocationTest
     }
 
     [TestMethod]
-    [ExpectedException(typeof(InvalidPluginExecutionException))]
+    //[ExpectedException(typeof(InvalidPluginExecutionException))]
     public void craUserLocationTestPluginLogic_ThrowsExceptionForInvalidData()
     {
         // Test error handling - this test expects an exception to be thrown
@@ -142,12 +142,15 @@ public class craUserLocationTest
         var serviceFactory = new Mock<IOrganizationServiceFactory>();
         var service = new Mock<IOrganizationService>();
         var serviceProvider = new Mock<IServiceProvider>();
-        
+        var tracing = new Mock<ITracingService>();
+
         serviceProvider.Setup(s => s.GetService(typeof(IPluginExecutionContext)))
                       .Returns(context.Object);
         serviceProvider.Setup(s => s.GetService(typeof(IOrganizationServiceFactory)))
                       .Returns(serviceFactory.Object);
-        
+        serviceProvider.Setup(s => s.GetService(typeof(ITracingService)))
+                      .Returns(tracing.Object);
+
         // Setup invalid data - missing required latitude/longitude
         var invalidEntity = new Entity("cra33_employee", Guid.NewGuid());
         // Don't set latitude/longitude - this should cause early return
@@ -161,10 +164,12 @@ public class craUserLocationTest
         
         // Act - This should throw an exception
         var plugin = new craRTOEmployeeCreatePost();
-        plugin.Execute(serviceProvider.Object);
-        
+
         // Assert - Exception is expected, so test passes if exception is thrown
 
-        Assert.Throws
+       Assert.Throws<InvalidPluginExecutionException>(() => plugin.Execute(serviceProvider.Object));
+
+
+        }
     }
-}
+

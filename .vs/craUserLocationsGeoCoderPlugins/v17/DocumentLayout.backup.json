@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|solutionrelative:testapp\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|c:\\users\\erutledge\\dvgeocoderplugin\\testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|solutionrelative:testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8DF8275D-851A-4705-A339-F14894C862DE}|craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj|C:\\Users\\erutledge\\dvGeoCoderPlugin\\crauserlocationsgeocoder\\crartoemployeecreatepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DF8275D-851A-4705-A339-F14894C862DE}|craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj|solutionrelative:crauserlocationsgeocoder\\crartoemployeecreatepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|c:\\users\\erutledge\\dvgeocoderplugin\\testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|solutionrelative:testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TestApp.csproj",
               "DocumentMoniker": "C:\\Users\\erutledge\\dvgeocoderplugin\\TestApp\\TestApp.csproj",
               "RelativeDocumentMoniker": "TestApp\\TestApp.csproj",
@@ -39,15 +39,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "craRTOEmployeeCreatePost.cs",
               "DocumentMoniker": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
               "RelativeDocumentMoniker": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
               "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
               "RelativeToolTip": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAwFUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAUwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T22:35:12.113Z"
+              "WhenOpened": "2025-08-14T22:35:12.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,7 +58,7 @@
               "RelativeDocumentMoniker": "TestApp\\Test.cs",
               "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\Test.cs",
               "RelativeToolTip": "TestApp\\Test.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAowAoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAlwKsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T22:20:15.782Z",
               "EditorCaption": ""
