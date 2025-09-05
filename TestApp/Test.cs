@@ -58,8 +58,8 @@ public class craUserLocationTest
         context.Setup(c => c.UserId).Returns(testUserId);
 
         var targetEntity = new Entity("cra33_employee", employeeId);
-        targetEntity["cra33_Latitude"] = 39.7941;  // Springfield, IL latitude
-        targetEntity["cra33_Longitude"] = -89.6395; // Springfield longitude
+        targetEntity["cra33_latitude"] = 39.7941f;  // Springfield, IL latitude
+        targetEntity["cra33_longitude"] = -89.6395f; // Springfield longitude
 
         context.Setup(c => c.InputParameters).Returns(new ParameterCollection
     {
@@ -79,25 +79,25 @@ public class craUserLocationTest
             var building = new Entity("cr736_doioccupancybuildingslist", Guid.NewGuid());
             var rowDict = (IDictionary<string, object>)row;
 
-            if (rowDict.ContainsKey("Latitude") && rowDict["Latitude"] != null)
-            {
-                var latString = rowDict["Latitude"].ToString().Trim();
-                if (double.TryParse(latString, out double latitude))
+                if (rowDict.ContainsKey("Latitude") && rowDict["Latitude"] != null)
                 {
-                    building["cr736_latitude"] = latitude;
+                    var latString = rowDict["Latitude"].ToString().Trim();
+                    if (double.TryParse(latString, out double latitude))
+                    {
+                        building["cr736_latitude"] = (float)latitude;  // Cast to float
+                    }
                 }
-            }
 
-            if (rowDict.ContainsKey("Longitude") && rowDict["Longitude"] != null)
-            {
-                var lngString = rowDict["Longitude"].ToString().Trim();
-                if (double.TryParse(lngString, out double longitude))
+                if (rowDict.ContainsKey("Longitude") && rowDict["Longitude"] != null)
                 {
-                    building["cr736_longitude"] = longitude;
+                    var lngString = rowDict["Longitude"].ToString().Trim();
+                    if (double.TryParse(lngString, out double longitude))
+                    {
+                        building["cr736_longitude"] = (float)longitude;  // Cast to float
+                    }
                 }
-            }
 
-            if (rowDict.ContainsKey("Building Name") && rowDict["Building Name"] != null)
+                if (rowDict.ContainsKey("Building Name") && rowDict["Building Name"] != null)
                 building["cr736_name"] = rowDict["Building Name"].ToString();
 
             fakeBuildings.Entities.Add(building);

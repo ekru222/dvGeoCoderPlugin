@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8DF8275D-851A-4705-A339-F14894C862DE}|craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj|c:\\users\\erutledge\\dvgeocoderplugin\\crauserlocationsgeocoder\\crartoemployeecreatepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DF8275D-851A-4705-A339-F14894C862DE}|craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj|solutionrelative:crauserlocationsgeocoder\\crartoemployeecreatepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|c:\\users\\erutledge\\dvgeocoderplugin\\testapp\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0A5516F-CF94-4F6B-6308-242CCA1A71A5}|TestApp\\TestApp.csproj|solutionrelative:testapp\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,19 +27,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "craRTOEmployeeCreatePost.cs",
+              "DocumentMoniker": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
+              "RelativeDocumentMoniker": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
+              "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
+              "RelativeToolTip": "craUserLocationsGeoCoder\\craRTOEmployeeCreatePost.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAwwE0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T21:36:01.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\Test.cs",
               "RelativeDocumentMoniker": "TestApp\\Test.cs",
               "ToolTip": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\TestApp\\Test.cs",
               "RelativeToolTip": "TestApp\\Test.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAqwFQAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAIwLEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-29T22:53:40.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "craUserLocationsGeoCoder.csproj.user",
               "DocumentMoniker": "C:\\Users\\erutledge\\dvGeoCoderPlugin\\craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj.user",
               "RelativeDocumentMoniker": "craUserLocationsGeoCoder\\craUserLocationsGeoCoder.csproj.user",

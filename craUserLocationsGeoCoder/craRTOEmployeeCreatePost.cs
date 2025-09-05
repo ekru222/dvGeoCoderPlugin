@@ -19,13 +19,13 @@ namespace craUserLocationsGeoCoder
 
             Entity NewEmployee = (Entity)context.InputParameters["Target"];
 
-            if (!NewEmployee.Contains("cra33_Latitude") || !NewEmployee.Contains("cra33_Longitude"))   //if lat or long are missing
+            if (!NewEmployee.Contains("cra33_latitude") || !NewEmployee.Contains("cra33_longitude"))   //if lat or long are missing
             {
                 throw new InvalidPluginExecutionException("Employee record must contain both Latitude and Longitude values."); //throw this error
             }
 
-            var personLat = NewEmployee.GetAttributeValue<double>("cra33_Latitude");
-            var personLon = NewEmployee.GetAttributeValue<double>("cra33_Longitude");
+            var personLat = NewEmployee.GetAttributeValue<float>("cra33_latitude");
+            var personLon = NewEmployee.GetAttributeValue<float>("cra33_longitude");
             var personId = NewEmployee.Id;
             tracing.Trace($"Person ID = {personId}");
             Console.WriteLine($"Person ID = {personId}");
@@ -39,12 +39,12 @@ namespace craUserLocationsGeoCoder
 
             foreach (Entity location in allLocations.Entities)
             {
-                var locationLat = location.GetAttributeValue<double>("cr736_latitude");
-                var locationLon = location.GetAttributeValue<double>("cr736_longitude");
+                var locationLat = location.GetAttributeValue<float>("cr736_latitude");
+                var locationLon = location.GetAttributeValue<float>("cr736_longitude");
 
                 var distance = DistanceCalculator.CalculateDistance(
-                    personLat, personLon,
-                    locationLat, locationLon);
+                    (double)personLat, (double)personLon,
+                    (double)locationLat, (double)locationLon);
 
                 if (distance <= 50)
                 {
